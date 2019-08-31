@@ -7,4 +7,4 @@
 export default (mark, connectionString) => (error) => {
   console.error(`${mark} disconnected on ${connectionString}`, error);
   throw error;
-}
+};

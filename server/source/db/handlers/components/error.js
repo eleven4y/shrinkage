@@ -7,4 +7,4 @@
 export default (mark, connectionString) => (error) => {
   console.error(`${mark} error on connection to ${connectionString}`, error);
   throw error;
-}
+};

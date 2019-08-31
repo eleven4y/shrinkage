@@ -5,4 +5,4 @@
  */
 export default (mark, connectionString) => () => {
   console.log(`${mark} try establish connection to ${connectionString}`);
-}
+};
