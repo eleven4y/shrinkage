@@ -1,9 +1,9 @@
 import colors from 'colors';
 
-import connected from './connected';
-import connecting from './connecting';
-import disconnected from './disconnected';
-import error from './error';
+import connected from './components/connected';
+import connecting from './components/connecting';
+import disconnected from './components/disconnected';
+import error from './components/error';
 
 /**
  * @param {string} name database name
