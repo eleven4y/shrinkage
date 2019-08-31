@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "nodemon --exec babel-node source",
-    "lint": "./node_modules/eslint/bin/eslint.js source"
+    "lint": "./node_modules/eslint/bin/eslint.js source",
+    "lint:fix": "./node_modules/eslint/bin/eslint.js --fix source"
   },
   "dependencies": {
     "bcrypt": "^3.0.6",
