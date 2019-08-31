@@ -10,13 +10,14 @@ import error from './components/error';
  * @param {string} connectionString string of connected database location
  * @return {Object}
  */
-export default (name ,connectionString) => {
-  const mark = colors.magenta(`[${name}]`)
+export default (name, connectionString) => {
+  const mark = colors.magenta(`[${name}]`);
+  const underlineConnectionString = colors.underline(connectionString);
 
   return {
-    connected: connected(mark, connectionString),
-    connecting: connecting(mark, connectionString),
-    disconnected: disconnected(mark, connectionString),
-    error: error(mark, connectionString),
+    connected: connected(mark, underlineConnectionString),
+    connecting: connecting(mark, underlineConnectionString),
+    disconnected: disconnected(mark, underlineConnectionString),
+    error: error(mark, underlineConnectionString),
   };
 };
