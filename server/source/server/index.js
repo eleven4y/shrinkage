@@ -3,14 +3,14 @@ import bparser from 'body-parser';
 
 import { server } from '../config';
 
-const { host, port } = server;
+import createHandler from './handlers';
+
+const { name, host, port } = server;
 
 const app = express();
 
 app.use(bparser.json());
 app.use(bparser.urlencoded({ extended: false }));
-
-const handleSuccess = () => console.log('success');
 
 /**
  * Try establish server connection
@@ -18,5 +18,7 @@ const handleSuccess = () => console.log('success');
  * @return {Object}
  */
 export function connect() {
-  return app.listen(port, host, handleSuccess);
+  const handler = createHandler(name, host, port);
+
+  return app.listen(port, host, handler.connected);
 }
