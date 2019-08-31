@@ -8,4 +8,8 @@ router.get('/', userController.getUserById);
 
 router.post('/', userController.createUser);
 
+router.put('/', userController.updateUserById);
+
+router.delete('/', userController.deleteUserById);
+
 export default router;
