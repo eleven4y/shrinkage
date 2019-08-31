@@ -1,5 +1,7 @@
-import app from './app';
+import { connect as dbConnect } from './db';
+import { connect as serverConnect } from './server';
 
-app.listen(3000, 'localhost', () => {
-  console.log('server listenning 3000 port');
-});
+dbConnect()
+  .then(() => {
+    serverConnect();
+  });
