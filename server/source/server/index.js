@@ -2,6 +2,7 @@ import express from 'express';
 import bparser from 'body-parser';
 
 import { server } from '../config';
+import rootRouter from '../routes';
 
 import createHandler from './handlers';
 
@@ -11,6 +12,8 @@ const app = express();
 
 app.use(bparser.json());
 app.use(bparser.urlencoded({ extended: false }));
+
+app.use('/api', rootRouter);
 
 /**
  * Try establish server connection
