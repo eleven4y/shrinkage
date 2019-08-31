@@ -33,6 +33,6 @@ UserSchema.pre('save', function(next) {
 
 UserSchema.methods.comparePassword = function(text) {
   return compare(text, this.password);
-}
+};
 
 export default mongoose.model(MODEL_NAME, UserSchema, COLLECTION_NAME);
