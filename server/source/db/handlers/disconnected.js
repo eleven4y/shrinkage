@@ -1,10 +1,10 @@
 /**
  * @throws
- * @param {string} name database name
+ * @param {string} mark mark of instance
  * @param {string} connectionString string of connected database location
  * @return {Function}
  */
-export default (name, connectionString) => (error) => {
-  console.error(`[${name}] disconnected on ${connectionString}`, error);
+export default (mark, connectionString) => (error) => {
+  console.error(`${mark} disconnected on ${connectionString}`, error);
   throw error;
 }
