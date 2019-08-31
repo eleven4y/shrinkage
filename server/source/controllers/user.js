@@ -39,7 +39,7 @@ export async function getUserById(req, res, next) {
   let user;
 
   try {
-    user = await UserModel.findOne({ id });
+    user = await UserModel.findOne({ _id: id });
   } catch (error) {
     next(error);
   }
