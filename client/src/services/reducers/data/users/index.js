@@ -1,3 +1,5 @@
+import * as api from '../../../api/users';
+
 import { getData } from '../index';
 
 import { STORE_USERS, CREATE_USER, UPDATE_USER, DELETE_USER } from '../../action-types';
@@ -89,6 +91,22 @@ export function deleteUserById(id) {
     type: DELETE_USER,
     meta: { id },
   };
+}
+
+/**
+ * Fetch and store users
+ * @return {Promise}
+ */
+export function fetchUsers() {
+  return (dispatch, getState) => {
+    return api.fetchUsers()
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  }
 }
 
 const initialState = {

@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 
-import { getUsersItemsMap, getUsersItemsList } from '../../../../../services/reducers/data/users';
+import { getUsersItemsMap, getUsersItemsList, fetchUsers } from '../../../../../services/reducers/data/users';
 
 /**
  * Users container
  * Root route: '/home/data/users'
  */
-function UserContainer() {
+function UserContainer({ fetchUsers }) {
+  useEffect(() => {
+    fetchUsers();
+  });
+
   return (
     <div>
       {'User container'}
@@ -23,6 +27,7 @@ UserContainer.propTypes = {
   itemsList: PropTypes.arrayOf(
     PropTypes.string,
   ),
+  fetchUsers: PropTypes.func,
 }
 
 const mapStateToProps = (state) => ({
@@ -30,7 +35,9 @@ const mapStateToProps = (state) => ({
   itemsList: getUsersItemsList(state),
 });
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = {
+  fetchUsers,
+};
 
 export default connect(
   mapStateToProps,
