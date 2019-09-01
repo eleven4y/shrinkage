@@ -96,7 +96,7 @@ const initialState = {
   itemsMap: null,
   /** list of users ids */
   itemsList: null,
-}
+};
 
 export default (state = initialState, action) => {
   const { type, payload, meta } = action;
