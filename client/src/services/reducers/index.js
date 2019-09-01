@@ -1,3 +1,7 @@
 import { combineReducers } from 'redux';
 
-export default combineReducers({ });
+import profile from './profile';
+
+export default combineReducers({
+  profile,
+});
