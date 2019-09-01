@@ -141,5 +141,6 @@
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
     ]
-  }
+  },
+  "proxy": "localhost:3001"
 }
