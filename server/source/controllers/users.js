@@ -1,6 +1,27 @@
 import UserModel from '../models/user';
 
 /**
+ * Get list of users
+ * @param {Object} req global http request object
+ * @param {Object} res global http response object
+ * @param {Function} next express next function
+ * @return {Object}
+ */
+export async function getUsers(req, res, next) {
+  let users;
+
+  try {
+    users = await UserModel.find();
+  } catch (error) {
+    next(error);
+  }
+
+  return res
+    .status(200)
+    .json(users);
+}
+
+/**
  * Create new user with given params
  * @param {Object} req global http request object
  * @param {Object} req.body object with request body parameters
