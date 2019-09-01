@@ -23,10 +23,15 @@ function getExampleFilename(componentPath) {
   return componentPath.replace('js', 'md');
 }
 
+const requiredResources = [
+  path.resolve(__dirname, './config/styleguidist/styles/index.scss'),
+];
+
 module.exports = {
   getComponentPathLine,
   getExampleFilename,
   ignore: ['**/index.js'],
+  require: requiredResources,
   skipComponentsWithoutExample: true,
   webpackConfig,
 }
