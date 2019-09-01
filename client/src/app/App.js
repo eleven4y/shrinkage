@@ -1,7 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import AuthContainer from '../containers/auth'
+import AuthContainer from '../containers/auth';
+import HomeContainer from '../containers/home';
 
 /**
  * App entry point
@@ -13,6 +14,9 @@ function App() {
       <Route
         path='/auth'
         component={AuthContainer}/>
+      <Route
+        path='/home'
+        component={HomeContainer}/>
     </Switch>
   );
 }
