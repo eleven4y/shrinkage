@@ -126,5 +126,8 @@
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
     ]
+  },
+  "devDependencies": {
+    "husky": "^3.0.4"
   }
 }
