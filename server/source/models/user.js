@@ -35,4 +35,11 @@ UserSchema.methods.comparePassword = function(text) {
   return compare(text, this.password);
 };
 
+UserSchema.set('toJSON',
+  {
+    virtuals: true,
+    transform: (doc, ret) => { delete ret._id; delete ret.__v; },
+  }
+);
+
 export default mongoose.model(MODEL_NAME, UserSchema, COLLECTION_NAME);
