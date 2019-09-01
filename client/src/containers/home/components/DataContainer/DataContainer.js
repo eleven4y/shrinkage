@@ -2,26 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 
-import DataContainer from './components/DataContainer';
+import UsersContainer from './components/UserContainer';
 
 /**
- * Home container
- * Root route: '/home'
- * Child routes: '/data'
+ * Data container
+ * Root route: '/data/home'
+ * Child routes: '/users'
  */
-function HomeContainer({ location, match }) {
+function DataContainer({ location, match }) {
   const { path } = match;
 
   return (
     <Switch location={location}>
       <Route
-        path={`${path}/data`}
-        component={DataContainer}/>
+        path={`${path}/users`}
+        component={UsersContainer}/>
     </Switch>
   );
 }
 
-HomeContainer.propTypes = {
+DataContainer.propTypes = {
   /** react router location object */
   location: PropTypes.object,
   /** react router history object */
@@ -30,4 +30,4 @@ HomeContainer.propTypes = {
   match: PropTypes.object,
 };
 
-export default HomeContainer;
+export default DataContainer;
