@@ -8,19 +8,19 @@
 
   box-sizing: border-box;
 
-  &--small {
+  &--size-small {
     height: 30px;
 
     padding-left: 3px;
     padding-right: 3px;
   }
-  &--medium {
+  &--size-medium {
     height: 40px;
 
     padding-left: 5px;
     padding-right: 5px;
   }
-  &--large {
+  &--size-large {
     height: 50px;
 
     padding-left: 7px;

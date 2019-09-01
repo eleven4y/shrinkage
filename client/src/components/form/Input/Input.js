@@ -27,7 +27,7 @@ function Input({ className, size, error, placeholder, value, onChange }) {
       className={classnames(
         className,
         'input',
-        `input--${componentSize}`,
+        `input--size-${componentSize}`,
         {'input--error': error}
       )}
       placeholder={placeholder}
