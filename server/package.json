@@ -8,6 +8,11 @@
     "lint": "./node_modules/eslint/bin/eslint.js source",
     "lint:fix": "./node_modules/eslint/bin/eslint.js --fix source"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
   "dependencies": {
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
