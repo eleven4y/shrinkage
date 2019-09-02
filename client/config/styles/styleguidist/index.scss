@@ -1,5 +1,14 @@
 /** Styles of styleguidist element */
 
+$colors-names: (
+  grey: #6c757d,
+  blue: #007bff,
+  green: #28a745,
+  orange: #fd7e14,
+  red: #dc3545,
+);
+
+/** section */
 .sg-section {
   border-radius: 10px;
   background-color: #f1f1f1;
@@ -7,11 +16,28 @@
   padding: 20px;
 }
 
+/** row */
 .sg-row {
   display: flex;
-  flex-direction: column; 
+  flex-direction: row;
+
+  &--nowrap {
+    flex-wrap: nowrap;
+  }
 }
 
+/** column */
+.sg-col {
+  $root: &;
+
+  @for $flex-count from 1 to 12 {
+    &-#{$flex-count} {
+      flex: 0 1 (1 / $flex-count) * 100%;
+    }
+  }
+}
+
+/** margins */
 .sg-mar-top-bot-10 {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -20,10 +46,38 @@
   &:last-child { margin-bottom: 0; }
 }
 
+/** paddings */
 .sg-pad-top-bot-10 {
   padding-top: 10px;
   padding-bottom: 10px;
 
   &:first-child { padding-top: 0; }
   &:last-child { padding-bottom: 0; }
+}
+
+/** button */
+.sg-button {
+  margin: 10px;
+
+  height: 30px;
+  outline: none;
+
+  border-radius: 10px;
+}
+
+/** background color */
+.sg-bgcolor {
+  $root: &;
+  
+  @each $color-name, $color-value in $colors-names {
+    &-#{$color-name} {
+      background-color: $color-value;
+
+      transition: background-color .3s ease-in-out;
+
+      &:hover {
+        background-color: darken($color-value, 10);
+      }
+    }
+  }
 }
