@@ -20,28 +20,30 @@
     <NotificationProvider
       items={state.items}
       deleteItem={onDeleteItem}/>
-    <div className='sg-row sg-mar-top-bot-10'>
-      <button onClick={onAddItem('default')}>
+    <div className='sg-row s sg-row-nowrap g-mar-top-bot-10'>
+      <button
+        className='sg-col-2 sg-button sg-bgcolor-grey'
+        onClick={onAddItem('default')}>
         {'add default toast'}
       </button>
-    </div>
-    <div className='sg-row sg-mar-top-bot-10'>
-      <button onClick={onAddItem('success')}>
+      <button
+        className='sg-col-2 sg-button sg-bgcolor-green'
+        onClick={onAddItem('success')}>
         {'add success toast'}
       </button>
-    </div>
-    <div className='sg-row sg-mar-top-bot-10'>
-      <button onClick={onAddItem('info')}>
+      <button
+        className='sg-col-2 sg-button sg-bgcolor-blue'
+        onClick={onAddItem('info')}>
         {'add info toast'}
       </button>
-    </div>
-    <div className='sg-row sg-mar-top-bot-10'>
-      <button onClick={onAddItem('warning')}>
+      <button
+        className='sg-col-2 sg-button sg-bgcolor-orange'
+        onClick={onAddItem('warning')}>
         {'add warning toast'}
       </button>
-    </div>
-    <div className='sg-row sg-mar-top-bot-10'>
-      <button onClick={onAddItem('error')}>
+      <button
+        className='sg-col-2 sg-button sg-bgcolor-red'
+        onClick={onAddItem('error')}>
         {'add error toast'}
       </button>
     </div>
