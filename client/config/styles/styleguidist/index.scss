@@ -38,12 +38,21 @@ $colors-names: (
 }
 
 /** margins */
-.sg-mar-top-bot-10 {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.sg-mar{
+  $root: &;
 
-  &:first-child { margin-top: 0; }
-  &:last-child { margin-bottom: 0; }
+  &--top-bot-10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  
+    &:first-child { margin-top: 0; }
+    &:last-child { margin-bottom: 0; }
+  }
+
+  &--left-right-10 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 /** paddings */

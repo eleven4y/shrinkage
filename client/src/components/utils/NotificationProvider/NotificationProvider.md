@@ -20,7 +20,7 @@
     <NotificationProvider
       items={state.items}
       deleteItem={onDeleteItem}/>
-    <div className='sg-row s sg-row-nowrap g-mar-top-bot-10'>
+    <div className='sg-row s sg-row-nowrap'>
       <button
         className='sg-col-2 sg-button sg-bgcolor-grey'
         onClick={onAddItem('default')}>
