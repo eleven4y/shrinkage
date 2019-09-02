@@ -24,7 +24,7 @@ function getExampleFilename(componentPath) {
 }
 
 const requiredResources = [
-  path.resolve(__dirname, './config/styleguidist/styles/index.scss'),
+  path.resolve(__dirname, './config/styles/styleguidist/index.scss'),
 ];
 
 module.exports = {
