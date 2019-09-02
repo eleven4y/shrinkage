@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "baseUrl": "./src",
+    "module": "commonjs"
+  },
+  "paths": {
+    "app": "./src/app",
+    "components": "./src/components",
+    "containers": "./src/containers",
+    "locales": "./src/locales",
+    "services": "./src/services",
+  },
+  "exclude": [
+    "build",
+    "node_modules",
+    "scipts"
+  ]
+}
