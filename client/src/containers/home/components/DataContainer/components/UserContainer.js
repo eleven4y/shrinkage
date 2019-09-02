@@ -11,7 +11,7 @@ import { getUsersItemsMap, getUsersItemsList, fetchUsers } from '../../../../../
 function UserContainer({ fetchUsers }) {
   useEffect(() => {
     fetchUsers();
-  });
+  }, []);
 
   return (
     <div>

@@ -100,8 +100,9 @@ export function deleteUserById(id) {
 export function fetchUsers() {
   return (dispatch, getState) => {
     return api.fetchUsers()
-    .then(data => {
-      console.log(data);
+    .then(({ data }) => {
+      dispatch(storeUsers(data));
+      return data;
     })
     .catch(error => {
       console.log(error);
