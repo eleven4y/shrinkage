@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import { getNotificationsItems, pullNotify } from '../../services/reducers/notifications';
 
@@ -10,8 +11,10 @@ import NotificationProvider from 'components/utils/NotificationProvider';
  * Notification container
  */
 function NotificationContainer({ items, pullNotify }) {
+  const { t } = useTranslation();
+
   return (
-    <NotificationProvider
+    <NotificationProvider t={t}
       items={items}
       deleteItem={pullNotify}/>
   );

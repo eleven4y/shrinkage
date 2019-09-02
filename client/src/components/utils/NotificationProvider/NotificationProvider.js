@@ -9,7 +9,7 @@ const Nop = () => {};
 /**
  * Notification provider
  */
-function NotificationProvider({ items, deleteItem, ...rest }) {
+function NotificationProvider({ t, items, deleteItem, ...rest }) {
   useEffect(() => {
     if (items.length) {
       const deletedItem = items[items.length - 1];
@@ -27,7 +27,7 @@ function NotificationProvider({ items, deleteItem, ...rest }) {
           onClick = Nop,
         } = options;
 
-        toast(message, { type, autoClose, delay, closeButton, progress, hideProgressBar, onOpen, onClose, onClick });
+        toast(t(message), { type, autoClose, delay, closeButton, progress, hideProgressBar, onOpen, onClose, onClick });
         deleteItem(id);
       }
     }
@@ -59,7 +59,8 @@ NotificationProvider.defaultProps = {
   rtl: false,
   draggable: false,
   items: [],
-  deleteItem: () => {},
+  deleteItem: Nop,
+  t: text => text,
 }
 
 NotificationProvider.propTypes = {
@@ -95,6 +96,8 @@ NotificationProvider.propTypes = {
   ),
   /** func, for delete item by id */
   deleteItem: PropTypes.func,
+  /** func, translator */
+  t: PropTypes.func,
 };
 
 export default NotificationProvider;
