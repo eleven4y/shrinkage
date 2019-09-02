@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import AuthContainer from 'containers/auth';
 import HomeContainer from 'containers/home';
+import NotificationContainer from 'containers/notifications';
 
 /**
  * App entry point
@@ -10,14 +11,17 @@ import HomeContainer from 'containers/home';
  */
 function App() {
   return (
-    <Switch>
-      <Route
-        path='/auth'
-        component={AuthContainer}/>
-      <Route
-        path='/home'
-        component={HomeContainer}/>
-    </Switch>
+    <Fragment>
+      <Switch>
+        <Route
+          path='/auth'
+          component={AuthContainer}/>
+        <Route
+          path='/home'
+          component={HomeContainer}/>
+      </Switch>
+      <NotificationContainer/>
+    </Fragment>
   );
 }
 

@@ -1,6 +1,7 @@
 import * as api from '../../../api/users';
 
 import { getData } from '../index';
+import { pushErrorNotification } from '../../notifications';
 
 import { STORE_USERS, CREATE_USER, UPDATE_USER, DELETE_USER } from '../../action-types';
 
@@ -105,7 +106,7 @@ export function fetchUsers() {
       return data;
     })
     .catch(error => {
-      console.log(error);
+      dispatch(pushErrorNotification({ message: error.message }));
     });
   }
 }
