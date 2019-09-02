@@ -31,7 +31,7 @@ function NotificationProvider({ t, items, deleteItem, ...rest }) {
         deleteItem(id);
       }
     }
-  }, [items, deleteItem]);
+  }, [t, items, deleteItem]);
 
 
   const { position, transition, autoClose, hideProgressBar, newestOnTop, closeOnClick, rtl, draggable } = rest;
