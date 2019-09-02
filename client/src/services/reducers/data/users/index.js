@@ -42,7 +42,7 @@ export const getUsersItemsCount = state =>
  * @param {Object[]} users list of users with parameters
  * @return {Object}
  */
-export function storeUsers(users) {
+export function storeUsers(users = []) {
   const itemsList = users.map(user => user.id);
   const itemsMap = users.reduce((acc, user) => {
     acc[user.id] = user;
