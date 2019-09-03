@@ -292,6 +292,8 @@ module.exports = function(webpackEnv) {
         containers: path.resolve(__dirname, '../src/containers'),
         locales: path.resolve(__dirname, '../src/locales'),
         services: path.resolve(__dirname, '../src/services'),
+
+        styles: path.resolve(__dirname, './styles'),
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
