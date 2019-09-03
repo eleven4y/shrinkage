@@ -1,14 +1,29 @@
-$colors--blue: #007bff;
+$colors-blue: #007bff;
+$colors-blue--dark: darken(#007bff, 10);
+$colors-blue--darken: darken(#007bff, 20);
 
-$colors--red: #dc3545;
+$colors-red: #dc3545;
+$colors-red--dark: darken(#dc3545, 10);
+$colors-red--darken: darken(#dc3545, 20);
 
-$colors--orange: #fd7e14;
+$colors-orange: #fd7e14;
+$colors-orange--dark: darken(#fd7e14, 10);
+$colors-orange--darken: darken(#fd7e14, 20);
 
-$colors--yellow: #ffc107;
+$colors-yellow: #ffc107;
+$colors-yellow--dark: darken(#ffc107, 10);
+$colors-yellow--darken: darken(#ffc107, 20);
 
-$colors--green: #28a745;
+$colors-green: #28a745;
+$colors-green--dark: darken(#28a745, 10);
+$colors-green--darken: darken(#28a745, 20);
 
-$colors--gray: #6c757d;
-$colors--gray-dark: #343a40;
+$colors-grey: #6c757d;
+$colors-grey--dark: darken(#6c757d, 10);
+$colors-grey--darken: darken(#6c757d, 20);
 
-$colors--white: #fff;
+$colors-gray--disabled: lighten(#6c757d, 15);
+
+$colors-white: #ffffff;
+
+$colors-black: #000000;
