@@ -27,9 +27,16 @@ const requiredResources = [
   path.resolve(__dirname, './config/styles/styleguidist/index.scss'),
 ];
 
+const sections = [
+  { name: 'Blocks', components: 'src/components/blocks/**/*.js'},
+  { name: 'Form', components: 'src/components/form/**/*.js'},
+  { name: 'Utils', components: 'src/components/utils/**/*.js' }
+];
+
 module.exports = {
   getComponentPathLine,
   getExampleFilename,
+  sections,
   ignore: ['**/index.js'],
   require: requiredResources,
   skipComponentsWithoutExample: true,
