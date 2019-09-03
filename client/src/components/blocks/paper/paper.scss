@@ -1,0 +1,27 @@
+/** Paper component styles */
+@import 'styles/variables';
+
+.paper {
+  $root: &;
+
+  display: flex;
+  flex-direction: column;
+  background-color: $colors-white;
+  border-radius: 10px;
+
+  padding: 20px;
+
+  &__header {
+    align-self: center;
+    font-size: 20px;
+    font-weight: bold;
+
+    margin: 10px 0;
+  }
+
+  &__body {
+    align-self: flex-start;
+
+    margin: 10px 0;
+  }
+}
