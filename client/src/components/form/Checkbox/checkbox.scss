@@ -1,0 +1,92 @@
+/** Checkbox component styles */
+@import 'styles/variables';
+
+.checkbox {
+  $root: &;
+
+  position: relative;
+
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 16px;
+
+  padding: 0;
+  padding-left: 16px;
+
+  &__input {
+    display: none;
+
+    &:checked + #{$root}__content #{$root}__icon {
+      display: block;
+    }
+
+    &:disabled {
+      & + #{$root}__content {
+        cursor: default;
+
+        #{$root}__icon,
+        #{$root}__label {
+          opacity: .6;
+        }
+
+        &:hover #{$root}__box,
+        &:focus #{$root}__box {
+          border-color: $colors-grey;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  &__box {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    box-sizing: border-box;
+    min-height: 16px;
+    min-width: 16px;
+
+    background-color: $colors-white;
+    border: 1px solid $colors-grey;
+
+    transition: border-color .2s ease-in-out;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    margin-top: 1px;
+    margin-left: 1px;
+
+    display: none;
+    height: 12px;
+    width: 12px;
+
+    transform: translate(-50%, -50%);
+    fill: $colors-blue;
+  }
+
+  &__content {
+    display: block;
+
+    outline: none;
+    cursor: pointer;
+
+    &:hover #{$root}__box,
+    &:active #{$root}__box {
+      border-color: $colors-blue;
+    }
+    &:focus #{$root}__box {
+      border-color: $colors-blue;
+      box-shadow: $box-shadows--focus;
+    }
+  }
+
+  &__label {
+    margin-left: 10px;
+  }
+}
