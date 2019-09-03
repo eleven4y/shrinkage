@@ -25,7 +25,7 @@
         className='sg-col-2 sg-mar--left-right-10'
         size='small'
         theme='red'
-        label='small ed button'/>
+        label='small red button'/>
     </div>
     <div className='sg-row sg-row-nowrap sg-mar--top-bot-10'>
       <Button
@@ -73,6 +73,11 @@
         size='large'
         theme='red'
         label='large red button'/>
+    </div>
+    <div className='sg-row sg-row-nowrap sg-mar--top-bot-10'>
+      <Button className='sg-col-6 sg-mar--left-right-10'
+        disabled
+        label='disabled button'/>
     </div>
   </section>
 ```
