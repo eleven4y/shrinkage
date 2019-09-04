@@ -1,6 +1,7 @@
 /** Styles of styleguidist element */
 
 $colors-names: (
+  white: #ffffff,
   grey: #6c757d,
   blue: #007bff,
   green: #28a745,
@@ -38,8 +39,12 @@ $colors-names: (
 }
 
 /** margins */
-.sg-mar{
+.sg-mar {
   $root: &;
+
+  &-10 {
+    margin: 10px;
+  }
 
   &--top-bot-10 {
     margin-top: 10px;
@@ -56,12 +61,20 @@ $colors-names: (
 }
 
 /** paddings */
-.sg-pad-top-bot-10 {
-  padding-top: 10px;
-  padding-bottom: 10px;
+.sg-pad {
+  $root: &;
 
-  &:first-child { padding-top: 0; }
-  &:last-child { padding-bottom: 0; }
+  &-10 {
+    padding: 10px;
+  }
+
+  &-top-bot-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  
+    &:first-child { padding-top: 0; }
+    &:last-child { padding-bottom: 0; }
+  }
 }
 
 /** button */

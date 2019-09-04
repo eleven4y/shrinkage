@@ -1,0 +1,10 @@
+/** Scrollbar component styles */
+@import 'styles/variables';
+
+.scrollbar {
+  $root: &;
+
+  &__content {
+    padding-right: 16px;
+  }
+}
