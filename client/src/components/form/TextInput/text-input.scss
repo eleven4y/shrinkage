@@ -1,0 +1,32 @@
+/** Checkbox component styles */
+@import 'styles/variables';
+
+.text-input {
+  $root: &;
+
+  &__label {
+    display: block;
+
+    padding-bottom: 5px;
+  }
+
+  &__value {
+    flex: 1 0 auto;
+
+    padding: 7px 10px;
+    border-radius: 5px;
+
+    border: none;
+    outline: none;
+    box-sizing: content-box;
+
+    &:focus {
+      border-color: $colors-blue;
+      box-shadow: $box-shadows--focus;
+    }
+  }
+
+  &--disabled {
+    opacity: .6;
+  }
+}
