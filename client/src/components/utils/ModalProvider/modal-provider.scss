@@ -1,0 +1,107 @@
+/** ModalProvider component styles */
+@import 'styles/variables';
+
+$sizes: (
+  small: 30%,
+  medium: 50%,
+  large: 70%,
+  xlarge: 90%,
+);
+
+$content-padding: 10px 20px;
+
+.modal-provider {
+  $root: &;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 10px;
+
+  overflow: auto;
+  outline: none;
+
+  transform: translate(-50%, -50%);
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    padding: $content-padding;
+    background-color: #f1f1f1;
+
+    #{$root}__title {
+      display: block;
+
+      font-size: 24px;
+    }
+  }
+
+  &__body {
+    padding: $content-padding;
+    background-color: $colors-white;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    padding: $content-padding;
+    background-color: #f1f1f1;
+  }
+
+  &__btn {
+    padding: 12px 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+
+    color: $colors-white;
+
+    border-radius: 10px;
+    outline: none;
+
+    box-sizing: border-box;
+    transition: background-color .3s ease-in-out;
+
+    &-cancel {
+      background-color: $colors-grey;
+
+      &:hover { background-color: $colors-grey--dark; cursor: pointer; }
+      &:focus { box-shadow: $box-shadows--focus; }
+    }
+
+    &-submit {
+      background-color: $colors-blue;
+
+      &:hover { background-color: $colors-blue--dark; cursor: pointer; }
+      &:focus { box-shadow: $box-shadows--focus; }
+    }
+
+    &:first-child { margin-left: 0; }
+    &:last-child { margin-right: 0; }
+
+    &:disabled {
+      background-color: lighten(#6c757d, 15);
+  
+      &:hover {
+        background-color: lighten(#6c757d, 15);
+        cursor: default;
+      }
+    }
+  }
+
+  @each $name, $value in $sizes {
+    &--size-#{$name} {
+      width: $value;
+    }
+  }
+}
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}
